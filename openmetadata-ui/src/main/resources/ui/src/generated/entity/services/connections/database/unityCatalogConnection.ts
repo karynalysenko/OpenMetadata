@@ -35,6 +35,10 @@ export interface UnityCatalogConnection {
      */
     databaseSchema?: string;
     /**
+     * List of default databases to exclude in ingestion.
+     */
+    defaultExcludeDatabases?: string[];
+    /**
      * List of default schemas to exclude in ingestion.
      */
     defaultExcludeSchemas?: string[];
