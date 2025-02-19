@@ -35,6 +35,10 @@ export interface DatabricksConnection {
      */
     databaseSchema?: string;
     /**
+     * List of default schemas to exclude in ingestion.
+     */
+    defaultExcludeSchemas?: string[];
+    /**
      * Host and port of the Databricks service.
      */
     hostPort: string;
