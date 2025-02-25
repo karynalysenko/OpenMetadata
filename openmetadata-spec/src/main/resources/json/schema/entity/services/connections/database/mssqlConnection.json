@@ -83,6 +83,20 @@
       },
       "default": ["^db_.*", "^guest$", "^information_schema$", "^sys$"]
     },
+    "defaultFilters": {
+      "database": {
+        "allOf": [
+            {
+              "$ref": "filterPattern.json#/definitions/filterPattern"
+            }
+          ],
+          "default": {
+            "excludes":  ["^msdb$", "^model$", "^tempdb$"]
+          },
+          "description": "Default filter to include/exclude database",
+          "title": "Default filters for database"
+      }
+    },
     "connectionOptions": {
       "title": "Connection Options",
       "$ref": "../connectionBasicType.json#/definitions/connectionOptions"
