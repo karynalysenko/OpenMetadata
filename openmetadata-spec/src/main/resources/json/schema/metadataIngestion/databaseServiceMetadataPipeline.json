@@ -43,17 +43,23 @@
     },
     "filters": {
       "type": "object",
-      "title": "Default Filters",
-      "description": "Default filters for entities",
+      "title": "Filters",
+      "description": "Filters for entities",
       "properties": {
-        "databaseFilterPattern": {
-          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
-        },
         "schemaFilterPattern": {
-          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
+          "description": "Regex to only fetch tables or databases that matches the pattern.",
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern",
+          "title": "Schema Filter Pattern"
         },
         "tableFilterPattern": {
-          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
+          "description": "Regex exclude tables or databases that matches the pattern.",
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern",
+          "title": "Table Filter Pattern"
+        },
+        "databaseFilterPattern": {
+          "description": "Regex to only fetch databases that matches the pattern.",
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern",
+          "title": "Database Filter Pattern"
         }
       },
       "additionalProperties": false
@@ -137,20 +143,8 @@
       "default": false,
       "title": "Use FQN For Filtering"
     },
-    "schemaFilterPattern": {
-      "description": "Regex to only fetch tables or databases that matches the pattern.",
-      "$ref": "../type/filterPattern.json#/definitions/filterPattern",
-      "title": "Schema Filter Pattern"
-    },
-    "tableFilterPattern": {
-      "description": "Regex exclude tables or databases that matches the pattern.",
-      "$ref": "../type/filterPattern.json#/definitions/filterPattern",
-      "title": "Table Filter Pattern"
-    },
-    "databaseFilterPattern": {
-      "description": "Regex to only fetch databases that matches the pattern.",
-      "$ref": "../type/filterPattern.json#/definitions/filterPattern",
-      "title": "Database Filter Pattern"
+    "filters": {
+      "$ref": "#/definitions/filters"
     },
     "threads": {
       "description": "Number of Threads to use in order to parallelize Table ingestion.",

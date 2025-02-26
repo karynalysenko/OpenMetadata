@@ -35,10 +35,7 @@ export interface MysqlConnection {
      * List of default schemas to exclude in ingestion.
      */
     defaultExcludeSchemas?: string[];
-    /**
-     * Default filters for entities
-     */
-    filters?: DefaultFilters;
+    filters?:               Filters;
     /**
      * Host and port of the MySQL service.
      */
@@ -165,16 +162,31 @@ export interface AzureCredentials {
 }
 
 /**
- * Default filters for entities
+ * Filters for entities
  */
-export interface DefaultFilters {
+export interface Filters {
+    /**
+     * Regex to only fetch databases that matches the pattern.
+     */
     databaseFilterPattern?: FilterPattern;
-    schemaFilterPattern?:   FilterPattern;
-    tableFilterPattern?:    FilterPattern;
+    /**
+     * Regex to only fetch tables or databases that matches the pattern.
+     */
+    schemaFilterPattern?: FilterPattern;
+    /**
+     * Regex exclude tables or databases that matches the pattern.
+     */
+    tableFilterPattern?: FilterPattern;
 }
 
 /**
+ * Regex to only fetch databases that matches the pattern.
+ *
  * Regex to only fetch dashboards or charts that matches the pattern.
+ *
+ * Regex to only fetch tables or databases that matches the pattern.
+ *
+ * Regex exclude tables or databases that matches the pattern.
  */
 export interface FilterPattern {
     /**

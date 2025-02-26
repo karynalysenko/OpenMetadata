@@ -14,10 +14,7 @@
  * DatabaseService Metadata Pipeline Configuration.
  */
 export interface DatabaseServiceMetadataPipeline {
-    /**
-     * Regex to only fetch databases that matches the pattern.
-     */
-    databaseFilterPattern?: FilterPattern;
+    filters?: Filters;
     /**
      * Optional configuration to toggle the DDL Statements ingestion.
      */
@@ -83,14 +80,6 @@ export interface DatabaseServiceMetadataPipeline {
      */
     queryParsingTimeoutLimit?: number;
     /**
-     * Regex to only fetch tables or databases that matches the pattern.
-     */
-    schemaFilterPattern?: FilterPattern;
-    /**
-     * Regex exclude tables or databases that matches the pattern.
-     */
-    tableFilterPattern?: FilterPattern;
-    /**
      * Number of Threads to use in order to parallelize Table ingestion.
      */
     threads?: number;
@@ -103,6 +92,24 @@ export interface DatabaseServiceMetadataPipeline {
      * service_name.db_name.schema_name.table_name) instead of raw name (e.g. table_name)
      */
     useFqnForFiltering?: boolean;
+}
+
+/**
+ * Filters for entities
+ */
+export interface Filters {
+    /**
+     * Regex to only fetch databases that matches the pattern.
+     */
+    databaseFilterPattern?: FilterPattern;
+    /**
+     * Regex to only fetch tables or databases that matches the pattern.
+     */
+    schemaFilterPattern?: FilterPattern;
+    /**
+     * Regex exclude tables or databases that matches the pattern.
+     */
+    tableFilterPattern?: FilterPattern;
 }
 
 /**

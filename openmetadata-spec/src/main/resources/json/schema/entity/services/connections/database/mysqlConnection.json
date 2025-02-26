@@ -95,8 +95,6 @@
       "default": ["^information_schema$", "^performance_schema$"]
     },
     "filters":{
-      "title": "Default Filters",
-      "description": "Default filters for entities",
       "$ref": "../../../../metadataIngestion/databaseServiceMetadataPipeline.json#/definitions/filters",
       "schemaFilterPattern":{
         "excludes":{
