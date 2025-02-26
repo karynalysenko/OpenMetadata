@@ -36,6 +36,10 @@ export interface MysqlConnection {
      */
     defaultExcludeSchemas?: string[];
     /**
+     * Default filters for entities
+     */
+    defaultFilters?: DefaultFilters;
+    /**
      * Host and port of the MySQL service.
      */
     hostPort:                 string;
@@ -158,6 +162,29 @@ export interface AzureCredentials {
      * Key Vault Name
      */
     vaultName?: string;
+}
+
+/**
+ * Default filters for entities
+ */
+export interface DefaultFilters {
+    databaseFilterPattern?: FilterPattern;
+    schemaFilterPattern?:   FilterPattern;
+    tableFilterPattern?:    FilterPattern;
+}
+
+/**
+ * Regex to only fetch dashboards or charts that matches the pattern.
+ */
+export interface FilterPattern {
+    /**
+     * List of strings/regex patterns to match and exclude only database entities that match.
+     */
+    excludes?: string[];
+    /**
+     * List of strings/regex patterns to match and include only database entities that match.
+     */
+    includes?: string[];
 }
 
 /**

@@ -40,6 +40,23 @@
       "required": [
         "enabled"
       ]
+    },
+    "defaultFilters": {
+      "type": "object",
+      "title": "Default Filters",
+      "description": "Default filters for entities",
+      "properties": {
+        "databaseFilterPattern": {
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
+        },
+        "schemaFilterPattern": {
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
+        },
+        "tableFilterPattern": {
+          "$ref": "../type/filterPattern.json#/definitions/filterPattern"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "properties": {
@@ -145,6 +162,11 @@
       "title": "Incremental Metadata Extraction Configuration",
       "description": "Use incremental Metadata extraction after the first execution. This is commonly done by getting the changes from Audit tables on the supporting databases.",
       "$ref": "#/definitions/incremental"
+    },
+    "defaultFilters":{
+      "title": "Default Filters",
+      "description": "Default filters for entities",
+      "$ref": "#/definitions/defaultFilters"
     }
   },
   "additionalProperties": false

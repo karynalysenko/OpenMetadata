@@ -94,6 +94,16 @@
       },
       "default": ["^information_schema$", "^performance_schema$"]
     },
+    "defaultFilters":{
+      "title": "Default Filters",
+      "description": "Default filters for entities",
+      "$ref": "../../../../metadataIngestion/databaseServiceMetadataPipeline.json#/definitions/defaultFilters",
+      "schemaFilterPattern":{
+        "excludes":{
+          "default": ["^information_schema$", "^performance_schema$"]
+        }
+      }
+    },
     "supportsMetadataExtraction": {
       "title": "Supports Metadata Extraction",
       "$ref": "../connectionBasicType.json#/definitions/supportsMetadataExtraction"
