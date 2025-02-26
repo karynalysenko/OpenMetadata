@@ -38,7 +38,7 @@ export interface MysqlConnection {
     /**
      * Default filters for entities
      */
-    defaultFilters?: DefaultFilters;
+    filters?: DefaultFilters;
     /**
      * Host and port of the MySQL service.
      */

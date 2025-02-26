@@ -19,10 +19,6 @@ export interface DatabaseServiceMetadataPipeline {
      */
     databaseFilterPattern?: FilterPattern;
     /**
-     * Default filters for entities
-     */
-    defaultFilters?: DefaultFilters;
-    /**
      * Optional configuration to toggle the DDL Statements ingestion.
      */
     includeDDL?: boolean;
@@ -127,15 +123,6 @@ export interface FilterPattern {
      * List of strings/regex patterns to match and include only database entities that match.
      */
     includes?: string[];
-}
-
-/**
- * Default filters for entities
- */
-export interface DefaultFilters {
-    databaseFilterPattern?: FilterPattern;
-    schemaFilterPattern?:   FilterPattern;
-    tableFilterPattern?:    FilterPattern;
 }
 
 /**

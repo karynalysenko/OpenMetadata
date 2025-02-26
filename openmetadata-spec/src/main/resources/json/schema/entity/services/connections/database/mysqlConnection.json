@@ -94,10 +94,10 @@
       },
       "default": ["^information_schema$", "^performance_schema$"]
     },
-    "defaultFilters":{
+    "filters":{
       "title": "Default Filters",
       "description": "Default filters for entities",
-      "$ref": "../../../../metadataIngestion/databaseServiceMetadataPipeline.json#/definitions/defaultFilters",
+      "$ref": "../../../../metadataIngestion/databaseServiceMetadataPipeline.json#/definitions/filters",
       "schemaFilterPattern":{
         "excludes":{
           "default": ["^information_schema$", "^performance_schema$"]
