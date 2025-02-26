@@ -119,6 +119,15 @@
       "title": "Connection Arguments",
       "$ref": "../connectionBasicType.json#/definitions/connectionArguments"
     },
+    "defaultExcludeSchemas": {
+      "title": "Exclude Default Schemas",
+      "description": "List of default schemas to exclude in ingestion.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["^sys$","^ctxsys$","^dbsnmp$", "^outln$"]
+    },
     "supportsMetadataExtraction": {
       "title": "Supports Metadata Extraction",
       "$ref": "../connectionBasicType.json#/definitions/supportsMetadataExtraction"
